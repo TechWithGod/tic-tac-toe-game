@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+body {
+    font-family:'Space Grotesk';
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    flex-direction:column;
+    gap:2rem;
+    background:rgba(255, 255, 0, 0.03);
+}
+
+#app {
+    display:grid;
+    grid-template-columns:repeat(3, auto);
+    grid-template-rows:repeat(3, 9.375rem);
+}
+
+.cell {
+    width:9.375rem;
+    height:9.375rem;
+    font-size:6rem;
+    display:flex;
+    font-weight:300;
+    align-items:center;
+    justify-content: center;
+    color:brown;
+    /* text-shadow:4px 4px 5px rgb(111, 106, 106); */
+}
+.cell:hover {
+    cursor:pointer;
+    
+}
+.cell-1, .cell-4, .cell-7, .cell-2, .cell-5, .cell-8 {
+    border-right:4px solid rgb(111, 111, 106);
+}
+
+.cell-1, .cell-2, .cell-3, .cell-4, .cell-5, .cell-6 {
+    border-bottom:4px solid rgb(111, 106, 106);
+}
+
+#player-status {
+    color:brown;
+    font-size:2.5rem;
+
+}
+
+#restart-btn {
+    background-color:brown;
+    color:white;
+    padding:0.5rem 1rem;
+    border-radius:0.5rem;
+    font-size:1.2rem;
+    cursor:pointer;
+}
+
+#restart-btn:hover {
+    background-color:rgba(165, 42, 42, 0.69);
+
+}
+
+form {
+    font-size:2.5rem;
+    background-color:azure;
+    padding:2rem;
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+}
+
+form input {
+    font-size:2.5rem;
+    width:100%;
+    height:2.8rem;
+}
+
+form input[type="submit"] {
+    background-color:green;
+    border:none;
+    font-size:2.5rem;
+    color:white;
+    width:fit-content;
+    border-radius:1rem;
+    height:fit-content;
+    align-self:center;
+    padding:0.5rem 1rem;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+@media screen and (min-width:320px) and (max-width:480px) {
+    html {
+        font-size:9px;
+    }
+}
+@media screen and (min-width:481px){
+    html {
+        font-size:15px;
+    }
+}
