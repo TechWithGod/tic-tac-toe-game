@@ -1,20 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
 body {
-    font-family:'Space Grotesk';
+    font-family:'Karla';
     display:flex;
     align-items:center;
     justify-content:center;
     height:100vh;
+    width:100vw;
     flex-direction:column;
+    color:white;
     gap:2rem;
-    background:rgba(255, 255, 0, 0.03);
+    /* background-image: url(https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
+    background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
 }
 
+#go-back-btn {
+    align-self:center;
+    color:#fff;
+    text-decoration:none;
+    background-color:black;
+    font-size:1.2rem;
+    padding:0.5rem 1rem;
+    border-radius:0.5rem;
+}
+
+#go-back-btn:hover {
+    opacity:0.8;
+}
+.score-board {
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    font-size:1.5rem;
+    color:black;
+    padding:2rem;
+    position:fixed;
+    top:0;left:0;
+    background-color: rgba(221, 221, 53, 0.8);
+    border-radius:1rem;
+    margin: 0.5rem 0 0 0.5rem;
+}
+
+.score-board h2 {
+    padding:0;
+    margin:0;
+}
 #app {
     display:grid;
     grid-template-columns:repeat(3, auto);
     grid-template-rows:repeat(3, 9.375rem);
+    margin:0 auto;
+    /* background:rgba(221, 221, 53, 0.8); */
+    background-color:rgb(44, 42, 42);
+    max-width:900px;
+    /* color: white; */
 }
 
 .cell {
@@ -22,41 +64,48 @@ body {
     height:9.375rem;
     font-size:6rem;
     display:flex;
-    font-weight:300;
+    /* font-weight:900; */
     align-items:center;
     justify-content: center;
-    color:brown;
-    /* text-shadow:4px 4px 5px rgb(111, 106, 106); */
+    /* text-shadow:2px -2px 2px rgb(250, 250, 244); */
+    font-family: 'Space Grotesk';
+    /* color:black; */
+    color:rgba(221, 221, 53, 1);
 }
 .cell:hover {
     cursor:pointer;
     
 }
 .cell-1, .cell-4, .cell-7, .cell-2, .cell-5, .cell-8 {
-    border-right:4px solid rgb(111, 111, 106);
+    border-right:2px solid white;
 }
 
 .cell-1, .cell-2, .cell-3, .cell-4, .cell-5, .cell-6 {
-    border-bottom:4px solid rgb(111, 106, 106);
+    border-bottom:2px solid white;
 }
 
 #player-status {
-    color:brown;
-    font-size:2.5rem;
+    position:fixed;
+    right:2rem;
+    top:2rem;
+    font-size:3rem;
+    font-weight:bold;
+    color:black;
 
 }
 
 #restart-btn {
-    background-color:brown;
-    color:white;
+    background-color:rgba(221, 221, 53, 0.8);
+    color:black;
     padding:0.5rem 1rem;
     border-radius:0.5rem;
-    font-size:1.2rem;
+    font-size:1.6rem;
     cursor:pointer;
+    text-align: center;
 }
 
 #restart-btn:hover {
-    background-color:rgba(165, 42, 42, 0.69);
+    opacity:0.8;
 
 }
 
@@ -89,6 +138,74 @@ form input[type="submit"] {
     text-decoration:none;
 }
 
+.ballon {
+    border-radius: 50%;
+    position:fixed;
+    z-index:-1;
+}
+
+.ballon-1 {
+    top:0;
+    left:0;
+    width:200px;
+    height:200px;
+    background-color: red;
+    animation: bounce 1s ease-in-out 0s infinite forwards;
+}
+.ballon-2 {
+    bottom:0;right:5%;
+    width:300px;
+    height:300px;
+    background-color: blue;
+    animation: bounce 2s ease-in-out 0s infinite forwards;
+
+}
+.ballon-3 {
+    bottom:0;
+    left:5%;
+    width:400px;
+    height:400px;
+    animation: bounce 3s ease-in-out 0s infinite forwards;
+
+    background-color: purple;
+}
+.ballon-4 {
+    top:0;
+    left:10%;
+    width:500px;
+    height:500px;
+    animation: bounce 5s ease-in-out 0s infinite forwards;
+
+    background-color: violet;
+}
+.ballon-5 {
+    top:0;
+    left:25%;
+    width:100px;
+    height:100px;
+    background-color: wheat;
+    animation: bounce 4s ease-in-out 0s infinite forwards;
+
+}
+
+#theme {
+    position:fixed;
+    width:50px;
+    height:350px;
+    top:25%;
+    right:10%;
+}
+
+
+@keyframes bounce {
+    from {
+        transform:translateY(0%);
+    }
+    to {
+        transform:translateY(80%);
+    }
+    
+}
 @media screen and (min-width:320px) and (max-width:480px) {
     html {
         font-size:9px;
@@ -96,6 +213,6 @@ form input[type="submit"] {
 }
 @media screen and (min-width:481px){
     html {
-        font-size:15px;
+        font-size:13px;
     }
 }
